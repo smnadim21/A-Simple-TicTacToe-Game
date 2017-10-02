@@ -283,7 +283,7 @@ public class TicTacToe extends JFrame
             }
 		}
 
-		if(check == 9)
+		if(check == 9|| check == 10)
         {
 
             System.out.println("Game Over!!");
@@ -312,7 +312,8 @@ public class TicTacToe extends JFrame
 		void gameOverShowBlue(){
 		gLabel.setText("BLUE Player Wins!!!");
 		blueScore.setText("Blue: " + blue_score);
-		redScore.setText("Red: " + red_score);		
+		redScore.setText("Red: " + red_score);
+		check = 0;		
 		gameOverShow();
 
 		}	
@@ -321,14 +322,16 @@ public class TicTacToe extends JFrame
 		gLabel.setText("RED Player Wins!!!");
 		blueScore.setText("Blue: " + blue_score);
 		redScore.setText("Red: " + red_score);
+		check = 1;
 		gameOverShow();
 
 
 		}	
 
 		void gameDrawn(){
-	gLabel.setText("Game Drawn !!");
-	gameOverShow();
+		gLabel.setText("Game Drawn !!");
+		check = 0 ;
+		gameOverShow();
 		}
 
 	void gameOverShow(){
@@ -385,7 +388,6 @@ public class TicTacToe extends JFrame
  
 	void layoutReset(){
 
- 	check = 0;
    	btn1.setEnabled(true);
 	btn2.setEnabled(true);
 	btn3.setEnabled(true);
@@ -412,21 +414,3 @@ public class TicTacToe extends JFrame
 
 
 }
-
-
-
-// class TicTacToeDemo
-// {
-// 	public static void main(String args[])
-// 	{
-// 		TicTacToe tic = new TicTacToe();
-// 		tic.setTitle("TicTacToe");
-
-// 		ImageIcon icon = new ImageIcon("th.jpg");
-// 		tic.setIconImage(icon.getImage());
-// 		tic.setVisible(true);
-// 		tic.setDefaultCloseOperation(tic.EXIT_ON_CLOSE);
-// 		tic.setResizable(false);
-// 		tic.setBounds(100,100,354,388);
-// 	}
-// }
